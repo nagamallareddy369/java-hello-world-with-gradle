@@ -28,8 +28,11 @@ jobs:
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
-      run: gradle publish
-      env:
-        USERNAME: ${{ nagamallareddy369 }}
-        TOKEN: ${{ secrets.ACCESS_KEY }}
-        TOKEN: ${{ secrets.SCERET_KEY }}
+      run: gradle publish        
+        
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.SCERET_KEY }}
+        aws-region: us-east-2      
