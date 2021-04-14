@@ -30,6 +30,6 @@ jobs:
     - name: Publish to GitHub Packages
       run: gradle publish
       env:
-        USERNAME: ${{ nagamallareddy369 }}
+        USERNAME: ${{ nagamallareddy3698 }}
         TOKEN: ${{ secrets.ACCESS_KEY }}
         TOKEN: ${{ secrets.SCERET_KEY }}
